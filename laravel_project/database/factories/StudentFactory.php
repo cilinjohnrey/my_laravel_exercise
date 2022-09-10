@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class StudentsFactory extends Factory
+class StudentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,12 @@ class StudentsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'first_name' => fake()->name(),
+            'last_name' => fake()->name(),
+            'gender' => fake()->randomElement(['Male', 'Female']),
+            'age' => fake()->numberBetween(17, 25),
+            'email' => fake()->safeEmail(),
+            
         ];
     }
 }
