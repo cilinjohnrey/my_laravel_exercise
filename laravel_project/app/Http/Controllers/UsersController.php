@@ -16,6 +16,11 @@ class UsersController extends Controller
         }
     }
 
+
+    public function store(Request $request){
+        dd($request);
+    }
+
     public function register(){
         if(View::exists('user.register')){
             return view('user.register');
