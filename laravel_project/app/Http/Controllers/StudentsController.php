@@ -18,11 +18,13 @@ class StudentsController extends Controller
         //     ->select(DB::raw('count(*) as total_gender, gender'))
         //     ->groupBy('gender')
         //     ->get();
-        $data = Student::where('id', 100)
-            ->firstOrFail()
-            ->get();
+        // $data = Student::where('id', 100)
+        //     ->firstOrFail()
+        //     ->get();
 
-        return view('student.index', ['students' => $data]);
+        // return view('student.index', ['students' => $data]);
+
+        return view('student.index');
     }
 
     public function show($id){

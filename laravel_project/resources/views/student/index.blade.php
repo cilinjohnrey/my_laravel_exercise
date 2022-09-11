@@ -1,13 +1,15 @@
 @include('partials.header', ['title' => 'Student List'])
+@php $array = array('title-nav' => 'Student System'); @endphp
+<x-nav :data="$array"/>
 
-<header class="max-w-lg mx-auto">
+<header class="max-w-lg mx-auto mt-5 md:mt-14">
     <h1 class="text-center">
         <a href="#" class="text-4xl font-bold text-white">Student List</a>
     </h1>
 </header>
-<section>
+<section class="mt-10">
     <div class="overflow-x-auto relative">
-        <table class="w-full taxt-sm text-left text-gray-500">
+        <table class="w-48 mx-auto taxt-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="py-3 px-6">

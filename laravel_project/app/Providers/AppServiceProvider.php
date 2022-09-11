@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Student;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -26,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::share('title', 'Student Admin');
+        View::composer('student.index', function ($view) {
+            $view->with('students', Student::all());
+        });
     }
 }
