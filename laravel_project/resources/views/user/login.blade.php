@@ -1,4 +1,4 @@
-@include('partials.header', ['title' => 'Log In'])
+@include('partials.header')
 
 <header class="max-w-lg mx-auto">
     <h1 class="text-center">

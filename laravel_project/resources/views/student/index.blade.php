@@ -1,4 +1,4 @@
-@include('partials.header', ['title' => 'Student List'])
+@include('partials.header')
 @php $array = array('title-nav' => 'Student System'); @endphp
 <x-nav :data="$array"/>
 

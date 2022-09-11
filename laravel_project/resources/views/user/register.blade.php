@@ -1,4 +1,4 @@
-@include('partials.header', ['title' => 'Register'])
+@include('partials.header')
 
 <header class="max-w-lg mx-auto">
     <h1 class="text-center">
@@ -12,6 +12,7 @@
    </section>
    <section class="mt-10">
       <form action="/store" method="POST" class="flex flex-col">
+         @csrf
          <div class="pt-3 mb-6 bg-gray-200 rounded">
             <label for="name" class="block mb-2 ml-3 text-sm font-bold text-gray-700">Name</label>
             <input type="text" class="w-full px-3 pb-1 text-gray-700 bg-gray-200 border-b-4 border-gray-400 rounded focus:outline-none" id="name" name="name">

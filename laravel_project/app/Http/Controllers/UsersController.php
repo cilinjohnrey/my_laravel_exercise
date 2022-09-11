@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -18,7 +20,17 @@ class UsersController extends Controller
 
 
     public function store(Request $request){
-        dd($request);
+        $validated = $request->validate([
+            'name' => ['required|min:4'],
+            'email' => ['required|email', Rule::unique('users', 'email')],
+            'password' => 'required|confirmed|min:6'
+        ]);
+
+        $validated['password'] = bcrypt($validated['password']);
+
+        $user = User::create($validated);
+
+        auth()->login($user);
     }
 
     public function register(){
